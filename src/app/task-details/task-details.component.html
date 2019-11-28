@@ -1,0 +1,41 @@
+<h2>Task Details</h2> 
+
+<hr/>
+<div *ngIf="task">
+  <div>
+    <label><b>Title: </b></label> {{task.title}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{task.description}}
+  </div>
+  <div>
+      <label><b>Status: </b></label> {{task.type}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      
+    </thead>
+    <tbody>
+      <tr >
+       
+        <td><button (click)="list()" class="btn btn-primary">Back to Task List</button><br>
+           
+        </td>
+        <td *ngIf="task.type !== 'PENDING'">
+            <button (click)=Pending(task.idTask) class="btn btn-danger">Pending</button> 
+      </td>
+      <td *ngIf="task.type !== 'IN_PROGRESS'">
+          <button (click)="InProgress(task.idTask)" class="btn btn-warning" style="margin-left: 10px">In progress</button>
+      </td>
+      <td *ngIf="task.type !== 'DONE'">
+          <button (click)="Done(task.idTask)" class="btn btn-success" style="margin-left: 10px">Done</button>
+      </td>
+     
+      </tr>
+    </tbody>
+  </table>

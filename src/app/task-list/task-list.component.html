@@ -1,0 +1,91 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Task List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Pending</th>
+                  <th>In Progress</th>
+                  <th>Done</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                               
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let task of tasks | async">
+                                <div *ngIf="task.type == 'PENDING'">
+                                <td>{{task.title}}</td>
+                                
+                                <td><button (click)="deleteTask(task.idTask)" class="btn btn-danger">Delete</button>
+                                   
+                                </td>
+                                <td>
+                                  <button (click)="taskDetails(task.idTask)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                              </td>
+                            </div>
+
+                              </tr>
+                            </tbody>
+                          </table>
+                    </td>
+                    <td>
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                               
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let task of tasks | async">
+                                <div *ngIf="task.type == 'IN_PROGRESS'">
+                                <td>{{task.title}}</td>
+                                
+                                <td><button (click)="deleteTask(task.idTask)" class="btn btn-danger">Delete</button>
+                                   
+                                </td>
+                                <td>
+                                  <button (click)="taskDetails(task.idTask)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                              </td>
+                            </div>
+
+                              </tr>
+                            </tbody>
+                          </table>
+                    </td>
+                    <td>
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                               
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let task of tasks | async">
+                                    <div *ngIf="task.type == 'DONE'">
+                                  <td>{{task.title}}</td>
+                                  <td><button (click)="deleteTask(task.idTask)" class="btn btn-danger">Delete</button>
+                                     
+                                  </td>
+                                  <td>
+                                    <button (click)="taskDetails(task.idTask)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                </td>
+                                    </div>
+                                </tr>
+                              </tbody>
+                          </table>
+                    </td>
+                  </tr>
+                </tbody>
+    </table>
+    </div>
+  </div>
