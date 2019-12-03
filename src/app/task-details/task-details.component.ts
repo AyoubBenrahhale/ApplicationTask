@@ -32,7 +32,7 @@ export class TaskDetailsComponent implements OnInit {
 }
 
 list(){
-  this.router.navigate(['tasks']);
+  this.router.navigate(['']);
 }
 
 
@@ -41,7 +41,7 @@ Pending(id: number) {
     .subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['tasks']);
+        this.router.navigate(['']);
       },
       error => console.log(error));
 }
@@ -51,7 +51,7 @@ InProgress(id: number) {
     .subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['tasks']); 
+        this.router.navigate(['']); 
       },
       error => console.log(error));
 }
@@ -60,7 +60,7 @@ Done(id: number) {
     .subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['tasks']);  
+        this.router.navigate(['']);  
       },
       error => console.log(error));
 }
